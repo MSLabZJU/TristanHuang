@@ -6,6 +6,7 @@
 
 - :e-mail: 联系方式：[tristanhuang@foxmail.com](mailto:tristanhuang@foxmail.com)
 - :computer: 个人主页：[tristanhuang.cn](http://tristanhuang.cn)
+- :octopus: Github：[TristanHuang0501](http://github.com/TristanHuang0501)
 
 ## 硕士期间主要工作
 
@@ -40,7 +41,7 @@
 
 ```plain
 % LogFile created by the 'SensorInfo' App for Android.
-% Date of creation: Tue Jan 06 11:22:53 GMT+08:00 1970
+% Date of creation: Tue Jan 06 11:22:53 GMT+08:00 2017
 % Developed by Tristan in ISMC research group at ZJU, China.
 % The 'SensorInfo' program stores information from Smartphone/Tablet internal sensors (Accelerometers, Gyroscopes, Magnetometers, Pressure, Gravity, LinearAccelerometers, Rotation) .
 % 
@@ -66,21 +67,7 @@
 
 MAGN;444173722;444173721;-6.3598633;-26.278687;-28.73993;3;
 PRES;444173723;444173722;1001.87933;0;
-MAGN;444173742;444173741;-6.1798096;-25.379944;-28.678894;3;
-PRES;444173756;444173755;1001.84937;0;
-MAGN;444173762;444173761;-5.8792114;-24.899292;-28.678894;3;
-MAGN;444173783;444173781;-6.1798096;-25.138855;-28.858948;3;
-PRES;444173790;444173788;1001.84937;0;
-MAGN;444173803;444173802;-5.9387207;-25.019836;-28.919983;3;
-MAGN;444173823;444173822;-6.239319;-25.138855;-28.919983;3;
-PRES;444173824;444173822;1001.7794;0;
-MAGN;444173843;444173842;-6.4193726;-25.079346;-28.49884;3;
-PRES;444173857;444173855;1001.8094;0;
-MAGN;444173863;444173862;-6.239319;-25.2594;-28.559875;3;
-MAGN;444173883;444173882;-6.1798096;-25.2594;-28.379822;3;
-PRES;444173890;444173889;1001.68945;0;
-MAGN;444173903;444173902;-6.298828;-25.498962;-28.379822;3;
-MAGN;444173923;444173922;-6.478882;-25.439453;-28.318787;3;
+... 中间省略
 PRES;444173924;444173923;1001.84937;0;
 MAGN;444173944;444173943;-6.298828;-25.439453;-28.079224;3;
 ```
@@ -97,7 +84,8 @@ M. Huang, X. Wang, P. Sun, S. Wang and Z. Wang, "Wavelet Package Analysis based 
 doi: 10.23919/ChiCC.2018.8483116
 
 **Abstract:** As a possible hazard to public health, the fall problem has gradually attracted researchers' attention. Detecting the occurrence of fall and diagnosing its intensity can be critical and helpful for deciding the next move. In this work, a novel accelerometer-based signal processing and analysis framework for fall detection and diagnosis is proposed. Wavelet package decomposition (WPD) is introduced for denoising and multi-resolution time-frequency analysis of signals from smartphone's accelerometer sensor. The extraction of features takes into account the statistical properties in both time domain and wavelet domain. To reduce the computational complexity of training and testing the classifiers, the reduction of dimension is performed by additionally evaluating features with principal component analysis (PCA). Then these features become the input of the first classifier for fall detection and if a fall occurs, the second classifier for intensity diagnosis will take the matter further. Test subjects undertake the experiments of falls and activities of daily living (ADLs) to generate data for analysis. The performance of classification based on different algorithms including k-nearest neighbor (k-NN) and support vector machine (SVM) is presented and compared. The good results indicate this work's applicability in real-world scenarios.
-keywords: {accelerometers;feature extraction;health care;matrix decomposition;medical signal processing;object detection;patient diagnosis;pattern classification;principal component analysis;signal denoising;signal resolution;smart phones;support vector machines;time-frequency analysis;wavelet transforms;hazard;fall diagnosis;activities of daily living;accelerometer-based signal processing;WPD;SVM;support vector machine;k-NN;k-nearest neighbor;denoising;multi-resolution time-frequency analysis;smartphones accelerometer sensor;features extraction;PCA;statistical properties;intensity diagnosis;principal component analysis;classifier;wavelet domain;time domain;wavelet package decomposition;fall problem;public health;wavelet package analysis based fall detection;Wavelet packets;Wavelet analysis;Discrete wavelet transforms;Accelerometers;Feature extraction;Entropy;Acceleration;Fall detection;Multi-resolution analysis;Acceleration signal;Principal component analysis},
+
+**keywords:** intensity diagnosis;fall problem;public health;accelerometers;Fall detection;Multi-resolution analysis
 
 URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8483116&isnumber=8482271
 

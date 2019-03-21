@@ -23,9 +23,47 @@
 
 ![声信号定位系统结构图](https://ws1.sinaimg.cn/large/006tKfTcly1g19iwwu47yj306l06kq2y.jpg)
 
-2. 跌倒检测系统研究与实现
+由于适应比赛场地多楼层的需要，将节点网络设置成了两组，与用户交互的信标节点分别是 5 号点和 10 号点，该定位算法需要预知每个点与这两个点之间的距离，需要在实验前测量好并输入进去。楼层的切换导致交互节点的切换，楼层的判别由手机上的气压计变动所决定，在实验前，需设置好各楼层的气压值。
 
-## 
+![手机端程序 UI](https://ws4.sinaimg.cn/large/006tKfTcly1g19jjgmo9vj305z0azt9j.jpg)
+
+代码仓库为：
+- 往届师兄的版本：TheUser 和 TheBeacon
+- 比赛版本：AALocUser 和 AALocBeacon
+
+### 3.跌倒检测相关的研究与系统实现
+
+#### 3.1 开发基于 Android 的传感器数据采集应用
+
+手机上有的传感器数据均可采集，一般包括 Accelerometers, Gyroscopes, Magnetometers, Pressure, Gravity, LinearAccelerometers, Rotation 等。
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1g19mdnogedj30is0e2qe6.jpg)
+
+一次实验采集到的数据会在手机内存中存储为一个txt文件，文件中标注了设备型号、品牌、实验的时间、数据格式、传感器参数等详细信息，每一行记录一条传感器数据，同时记录下记录的时刻。
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1g19mio1cs0j31m80u0diu.jpg)
+
+#### 3.2 本地测量到的跌倒数据
+
+在 MSLabPlatform/MSLabPlatform_Fall_Detection 中的 log_files 和 database 中，数据来源是上面实测得到的txt处理而来，处理的matlab代码在同一文件目录下。
+
+#### 3.3 MSL整合平台
+
+即 MSLabPlatform 项目
+
+#### 3.4 发表一篇会议论文
+
+M. Huang, X. Wang, P. Sun, S. Wang and Z. Wang, "Wavelet Package Analysis based Fall Detection and Diagnosis," 2018 37th Chinese Control Conference (CCC), Wuhan, 2018, pp. 4206-4211.
+doi: 10.23919/ChiCC.2018.8483116
+
+**Abstract:** As a possible hazard to public health, the fall problem has gradually attracted researchers' attention. Detecting the occurrence of fall and diagnosing its intensity can be critical and helpful for deciding the next move. In this work, a novel accelerometer-based signal processing and analysis framework for fall detection and diagnosis is proposed. Wavelet package decomposition (WPD) is introduced for denoising and multi-resolution time-frequency analysis of signals from smartphone's accelerometer sensor. The extraction of features takes into account the statistical properties in both time domain and wavelet domain. To reduce the computational complexity of training and testing the classifiers, the reduction of dimension is performed by additionally evaluating features with principal component analysis (PCA). Then these features become the input of the first classifier for fall detection and if a fall occurs, the second classifier for intensity diagnosis will take the matter further. Test subjects undertake the experiments of falls and activities of daily living (ADLs) to generate data for analysis. The performance of classification based on different algorithms including k-nearest neighbor (k-NN) and support vector machine (SVM) is presented and compared. The good results indicate this work's applicability in real-world scenarios.
+keywords: {accelerometers;feature extraction;health care;matrix decomposition;medical signal processing;object detection;patient diagnosis;pattern classification;principal component analysis;signal denoising;signal resolution;smart phones;support vector machines;time-frequency analysis;wavelet transforms;hazard;fall diagnosis;activities of daily living;accelerometer-based signal processing;WPD;SVM;support vector machine;k-NN;k-nearest neighbor;denoising;multi-resolution time-frequency analysis;smartphones accelerometer sensor;features extraction;PCA;statistical properties;intensity diagnosis;principal component analysis;classifier;wavelet domain;time domain;wavelet package decomposition;fall problem;public health;wavelet package analysis based fall detection;Wavelet packets;Wavelet analysis;Discrete wavelet transforms;Accelerometers;Feature extraction;Entropy;Acceleration;Fall detection;Multi-resolution analysis;Acceleration signal;Principal component analysis},
+
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8483116&isnumber=8482271
+
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1g1aa0bp6lxj30rx0bm3z2.jpg)
+
 
 ## 毕业论文主要内容
 

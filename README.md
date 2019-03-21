@@ -36,24 +36,64 @@
 #### 3.1 开发基于 Android 的传感器数据采集应用
 
 手机上有的传感器数据均可采集，一般包括 Accelerometers, Gyroscopes, Magnetometers, Pressure, Gravity, LinearAccelerometers, Rotation 等。
-
-![](https://ws1.sinaimg.cn/large/006tKfTcly1g19mdnogedj30is0e2qe6.jpg)
-
 一次实验采集到的数据会在手机内存中存储为一个txt文件，文件中标注了设备型号、品牌、实验的时间、数据格式、传感器参数等详细信息，每一行记录一条传感器数据，同时记录下记录的时刻。
 
-![](https://ws4.sinaimg.cn/large/006tKfTcly1g19mio1cs0j31m80u0diu.jpg)
+```plain
+% LogFile created by the 'SensorInfo' App for Android.
+% Date of creation: Tue Jan 06 11:22:53 GMT+08:00 1970
+% Developed by Tristan in ISMC research group at ZJU, China.
+% The 'SensorInfo' program stores information from Smartphone/Tablet internal sensors (Accelerometers, Gyroscopes, Magnetometers, Pressure, Gravity, LinearAccelerometers, Rotation) .
+% 
+% The model of device:  Nexus 4
+% The Manufacturer:     LGE
+% 
+% LogFile Data format:
+% Accelerometer data: 	'ACCE;AppTimestamp(s);SensorTimestamp(s);Acc_X(m/s^2);Acc_Y(m/s^2);Acc_Z(m/s^2);Accuracy(integer)'
+% ... 中间省略
+% LinearAcc data:   	'LACC;AppTimestamp(s);SensorTimestamp(s);Lacc_X(m/s^2);Lacc_Y(m/s^2);Lacc_Z(m/s^2);Accuracy(integer)'
+% 
+% The info of Sensors:
+% Accelerometer Sensor:
+% 			Name:       LGE Accelerometer Sensor
+% 			Vendor:     InvenSense
+% 			Power:      0.5
+% 			MaxRange:   39.226593
+% 			Resolution: 0.0011901855
+% ... 中间省略
+% Rotation Sensor:
+% 			MaxRange:   1.0
+% 			Resolution: 5.9604645E-8
+
+MAGN;444173722;444173721;-6.3598633;-26.278687;-28.73993;3;
+PRES;444173723;444173722;1001.87933;0;
+MAGN;444173742;444173741;-6.1798096;-25.379944;-28.678894;3;
+PRES;444173756;444173755;1001.84937;0;
+MAGN;444173762;444173761;-5.8792114;-24.899292;-28.678894;3;
+MAGN;444173783;444173781;-6.1798096;-25.138855;-28.858948;3;
+PRES;444173790;444173788;1001.84937;0;
+MAGN;444173803;444173802;-5.9387207;-25.019836;-28.919983;3;
+MAGN;444173823;444173822;-6.239319;-25.138855;-28.919983;3;
+PRES;444173824;444173822;1001.7794;0;
+MAGN;444173843;444173842;-6.4193726;-25.079346;-28.49884;3;
+PRES;444173857;444173855;1001.8094;0;
+MAGN;444173863;444173862;-6.239319;-25.2594;-28.559875;3;
+MAGN;444173883;444173882;-6.1798096;-25.2594;-28.379822;3;
+PRES;444173890;444173889;1001.68945;0;
+MAGN;444173903;444173902;-6.298828;-25.498962;-28.379822;3;
+MAGN;444173923;444173922;-6.478882;-25.439453;-28.318787;3;
+PRES;444173924;444173923;1001.84937;0;
+MAGN;444173944;444173943;-6.298828;-25.439453;-28.079224;3;
+```
 
 #### 3.2 本地测量到的跌倒数据
 
-在 MSLabPlatform/MSLabPlatform_Fall_Detection 中的 log_files 和 database 中，数据来源是上面实测得到的txt处理而来，处理的matlab代码在同一文件目录下。
+在 MSLabPlatform/MSLabPlatform_Fall_Detection 中的 log_files 和 database 中，数据来源是上面实测得到的txt处理而来，处理的matlab代码在同一文件目录下。对这些数据的处理当时主要是用的 matlab ，并依托这些数据撰写了会议论文"Wavelet Package Analysis based Fall Detection and Diagnosis"。
 
-#### 3.3 MSL整合平台
+![](https://ws2.sinaimg.cn/large/006tKfTcly1g1aar0rlevj30he0d2dja.jpg)
 
-即 MSLabPlatform 项目
+#### 3.3 发表一篇会议论文
 
-#### 3.4 发表一篇会议论文
-
-M. Huang, X. Wang, P. Sun, S. Wang and Z. Wang, "Wavelet Package Analysis based Fall Detection and Diagnosis," 2018 37th Chinese Control Conference (CCC), Wuhan, 2018, pp. 4206-4211.
+M. Huang, X. Wang, P. Sun, S. Wang and Z. Wang, "Wavelet Package Analysis based Fall Detection and Diagnosis", 2018 37th Chinese Control Conference (CCC), Wuhan, 2018, pp. 4206-4211.
 doi: 10.23919/ChiCC.2018.8483116
 
 **Abstract:** As a possible hazard to public health, the fall problem has gradually attracted researchers' attention. Detecting the occurrence of fall and diagnosing its intensity can be critical and helpful for deciding the next move. In this work, a novel accelerometer-based signal processing and analysis framework for fall detection and diagnosis is proposed. Wavelet package decomposition (WPD) is introduced for denoising and multi-resolution time-frequency analysis of signals from smartphone's accelerometer sensor. The extraction of features takes into account the statistical properties in both time domain and wavelet domain. To reduce the computational complexity of training and testing the classifiers, the reduction of dimension is performed by additionally evaluating features with principal component analysis (PCA). Then these features become the input of the first classifier for fall detection and if a fall occurs, the second classifier for intensity diagnosis will take the matter further. Test subjects undertake the experiments of falls and activities of daily living (ADLs) to generate data for analysis. The performance of classification based on different algorithms including k-nearest neighbor (k-NN) and support vector machine (SVM) is presented and compared. The good results indicate this work's applicability in real-world scenarios.
@@ -62,7 +102,21 @@ keywords: {accelerometers;feature extraction;health care;matrix decomposition;me
 URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8483116&isnumber=8482271
 
 
-![](https://ws4.sinaimg.cn/large/006tKfTcly1g1aa0bp6lxj30rx0bm3z2.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcly1g1aao3mwi0j30ms096t96.jpg)
+
+#### 3.4 MSL整合平台
+
+即 MSLabPlatform 项目，项目包括 Android 端和 PC 端，其中 PC 端目前主要运行在 matlab 上，通过引入 Java api 实现与 Android 手机的 socket 连接并传输与获取数据。
+
+#### 3.5 UCI 公开数据集及相关处理
+
+UCI Machine Learning Repository: Simulated Falls and Daily Living Activities Data Set Data Set
+
+URL：https://archive.ics.uci.edu/ml/datasets/Simulated+Falls+and+Daily+Living+Activities+Data+Set
+
+该数据集相关的数据提取及相关代码处理在下面的 URL 中
+
+URL：https://github.com/MSLabZJU/MSLabPlatform/tree/master/MSLabPlatform_Fall_Detection/uci%20data
 
 
 ## 毕业论文主要内容
